@@ -146,17 +146,18 @@ formulario.addEventListener("submit", async function (e) {
         if (error) throw error;
 
         if (estado === "Confirmado") {
-
             alert(
-                "✅ Inscripción realizada correctamente.\n\nNº " + orden
+                "✅ Inscripción realizada correctamente.\n\n" +
+                "Tu plaza ha quedado confirmada.\n\n" +
+                "Nos pondremos en contacto contigo si fuese necesario.\n\n" +
+                "¡Gracias por participar y nos vemos en el torneo!"
             );
-
         } else {
-
             alert(
-                "🟡 Categoría completa.\n\nHas quedado en LISTA DE RESERVA."
+                "🟡 Categoría completa.\n\n" +
+                "Has sido inscrito en la lista de reserva.\n\n" +
+                "Si se libera alguna plaza, contactaremos contigo por teléfono."
             );
-
         }
 
         formulario.reset();
