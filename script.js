@@ -6,7 +6,7 @@ const SUPABASE_URL = "https://eoqpxunnqyojpbxzrgoi.supabase.co";
 
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVvcXB4dW5ucXlvanBieHpyZ29pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQwMDcxMjksImV4cCI6MjA5OTU4MzEyOX0.9iYNmeVnwFPbsOleoENpNdf_Bh-vpJ74PJe8yIzPOOc";
 
-const supabase = window.supabase.createClient(
+const db = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
@@ -72,7 +72,7 @@ formulario.addEventListener("submit", async function (e) {
 
         // Contar confirmados
 
-        const { data: inscritos } = await supabase
+        const { data: inscritos } = await db
 
             .from("inscripciones")
 
@@ -88,7 +88,7 @@ formulario.addEventListener("submit", async function (e) {
 
         // Calcular número
 
-        const { data: todos } = await supabase
+        const { data: todos } = await db
 
             .from("inscripciones")
 
@@ -100,7 +100,7 @@ formulario.addEventListener("submit", async function (e) {
 
         const orden = todos.length ? todos[0].orden + 1 : 1;
 
-        const { error } = await supabase
+        const { error } = await db
 
             .from("inscripciones")
 
@@ -160,7 +160,7 @@ formulario.addEventListener("submit", async function (e) {
 
 async function cargarPlazas() {
 
-    const { data, error } = await supabase
+    const { data, error } = await db
         .from("inscripciones")
         .select("categoria,estado");
 
