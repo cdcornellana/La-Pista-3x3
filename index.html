@@ -15,28 +15,48 @@
 
 <body>
 
-    <header>
+    <header class="hero">
 
-        <img src="logo.png" class="logo" alt="Logo torneo">
+        <div class="hero-overlay"></div>
 
-        <div class="presentacion">
+        <div class="hero-content">
+
+            <img src="logo.png" class="logo" alt="Logo torneo">
+
             <h1>3x3 LA PISTA</h1>
 
-            <p class="subtitle">
-                Cornellana · Agosto 2026
+            <p class="hero-subtitle">
+                Torneo de fútbol 3x3 · Cornellana
             </p>
 
-            <p class="subtitle">
-                📍 La Pista de Cornellana
-            </p>
+            <div class="hero-info">
 
-            <p class="subtitle">
-                ⚽ Infantil 8 de agosto · Adulto 12 de agosto
-            </p>
+                <div class="hero-item">
+                    📅 <strong>8 Agosto</strong><br>
+                    Infantil
+                </div>
+
+                <div class="hero-item">
+                    📅 <strong>12 Agosto</strong><br>
+                    Adulto
+                </div>
+
+                <div class="hero-item">
+                    📍 <strong>La Pista</strong><br>
+                    Cornellana
+                </div>
+
+            </div>
+
+            <a href="#categorias" class="hero-btn">
+                Inscribirse
+            </a>
+
         </div>
+
     </header>
 
-    <main>
+    <main id="categorias">
 
         <section class="card">
 
@@ -76,15 +96,49 @@
 
         <section class="info">
 
-            <h3>📍 Lugar</h3>
+            <h2>Información</h2>
 
-            <p>La Pista de Cornellana</p>
+            <div class="datos">
 
-            <a class="pdf" href="normas.pdf" target="_blank">
+                <div class="dato">
 
-                📄 Ver normas del torneo
+                    <h3>📍 Ubicación</h3>
 
-            </a>
+                    <p>La Pista de Cornellana</p>
+
+                    <a href="https://maps.app.goo.gl/5gZbwK1Fms9wWzNi7" target="_blank">
+                        Ver en Google Maps
+                    </a>
+
+                </div>
+
+                <div class="dato">
+
+                    <h3>📄 Normativa</h3>
+
+                    <a class="pdf" href="normas.pdf" target="_blank">
+                        Descargar normas
+                    </a>
+
+                </div>
+
+                <div class="dato">
+
+                    <h3>📞 Contacto</h3>
+
+                    <a href="https://www.instagram.com/cdcornellana/" target="_blank">
+                        Instagram
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.facebook.com/profile.php?id=100091843671291" target="_blank">
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -141,7 +195,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
-    
+
 </body>
 
 </html>
