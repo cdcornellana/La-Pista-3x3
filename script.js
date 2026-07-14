@@ -66,7 +66,28 @@ formulario.addEventListener("submit", async function (e) {
 
     const edad = parseInt(document.getElementById("edad").value);
 
+    if (categoria === "Infantil" && (edad < 8 || edad > 15)) {
+        alert("La categoría Infantil es para participantes de 8 a 15 años.");
+        boton.disabled = false;
+        boton.innerHTML = "Enviar inscripción";
+        return;
+    }
+
+    if (categoria === "Adulto" && edad < 16) {
+        alert("La categoría Adulto es para participantes de 16 años o más.");
+        boton.disabled = false;
+        boton.innerHTML = "Enviar inscripción";
+        return;
+    }
+
     const telefono = document.getElementById("telefono").value.trim();
+
+    if (!/^[0-9]{9}$/.test(telefono)) {
+        alert("Introduce un teléfono válido de 9 cifras.");
+        boton.disabled = false;
+        boton.innerHTML = "Enviar inscripción";
+        return;
+    }
 
     try {
 
