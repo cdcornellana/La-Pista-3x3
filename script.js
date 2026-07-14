@@ -82,7 +82,7 @@ formulario.addEventListener("submit", async function (e) {
 
             .eq("estado", "Confirmado");
 
-        const limite = categoria === "Infantil" ? 1 : 1;
+        const limite = categoria === "Infantil" ? 45 : 24;
 
         const estado = inscritos.length < limite ? "Confirmado" : "Reserva";
 
